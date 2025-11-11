@@ -23,6 +23,7 @@ btn.addEventListener('click', () => {
     tiniGrid.classList.add('grid');
     tiniGrid.style.width = tiniGridSize + 'px';
     tiniGrid.style.height = tiniGridSize + 'px';
+    tiniGrid.dataset.alpha = 1;
     fragment.appendChild(tiniGrid);
 }
 container.appendChild(fragment);
@@ -30,5 +31,13 @@ container.appendChild(fragment);
 
 
 container.addEventListener('mouseover', (e) => {
-    if (e.target.classList.contains('grid')) {e.target.classList.add('highlight')}
+    const r = Math.random() * 255;
+    const g = Math.random() * 255;
+    const b = Math.random() * 255;
+    let a = Number(e.target.dataset.alpha);
+    a -= 0.3;
+    e.target.dataset.alpha = a;
+    if (e.target.classList.contains('grid')) {
+        e.target.style.backgroundColor = `rgba(${r},${g},${b},${a})`
+    }
 })

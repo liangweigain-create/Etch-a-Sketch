@@ -5,13 +5,11 @@
     box-sizing: border-box;
     padding: 1px;
     gap: 1px;
+    margin: 20px auto;
 }
 .grid {
     box-sizing: border-box;
-}
-
-.highlight {
-    background-color: yellow;
+    background-color: rgb(216, 216, 255);
 }
 
 .grid-num {
